@@ -1,6 +1,6 @@
 //
-//  PresageSDKSampleTests.swift
-//  PresageSDKSampleTests
+//  FitPulseDemoTests.swift
+//  FitPulseDemoTests
 //
 //  Created by Reuben Varghese on 7/17/25.
 //
@@ -9,16 +9,16 @@ import Foundation
 import Testing
 import SwiftUI
 import AVFoundation
-@testable import PresageSDKSample
+@testable import FitPulseDemo
 @testable import SmartSpectraSwiftSDK
 
 @MainActor
-struct HeadlessSDKExampleTests {
+struct FitPulseDemoTests {
     
     // MARK: - Initialization Tests
     
     @Test func testInitialization() async throws {
-        let viewModel = HeadlessSDKViewModel()
+        let viewModel = FitPulseDemoViewModel()
         
         // Verify initial state
         #expect(viewModel.testCollectedRates.isEmpty)
@@ -36,7 +36,7 @@ struct HeadlessSDKExampleTests {
     // MARK: - Vitals Monitoring State Tests
     
     @Test func testStartVitalsMonitoringResetsValues() async throws {
-        let viewModel = HeadlessSDKViewModel()
+        let viewModel = FitPulseDemoViewModel()
         
         // Simulate some existing data
         viewModel.startVitalsMonitoring()
@@ -49,7 +49,7 @@ struct HeadlessSDKExampleTests {
     }
     
     @Test func testStopVitalsMonitoringWithEmptyData() async throws {
-        let viewModel = HeadlessSDKViewModel()
+        let viewModel = FitPulseDemoViewModel()
         
         viewModel.stopVitalsMonitoring()
         
@@ -62,7 +62,7 @@ struct HeadlessSDKExampleTests {
     // MARK: - Metrics Calculation Tests
     
     @Test func testPulseRateCalculationSingleValue() async throws {
-        let viewModel = HeadlessSDKViewModel()
+        let viewModel = FitPulseDemoViewModel()
         
         // Simulate receiving a single pulse rate value
         let testRate = 72.0
@@ -79,7 +79,7 @@ struct HeadlessSDKExampleTests {
     }
     
     @Test func testPulseRateCalculationMultipleValues() async throws {
-        let viewModel = HeadlessSDKViewModel()
+        let viewModel = FitPulseDemoViewModel()
         
         // Test with multiple values: 60, 70, 80
         let testRates = [60.0, 70.0, 80.0]
@@ -95,7 +95,7 @@ struct HeadlessSDKExampleTests {
     }
     
     @Test func testPulseRateCalculationWithDecimals() async throws {
-        let viewModel = HeadlessSDKViewModel()
+        let viewModel = FitPulseDemoViewModel()
         
         // Test with decimal values that should be rounded
         let testRates = [65.7, 72.3, 68.9]
@@ -110,7 +110,7 @@ struct HeadlessSDKExampleTests {
     }
     
     @Test func testCumulativeMetricsUpdates() async throws {
-        let viewModel = HeadlessSDKViewModel()
+        let viewModel = FitPulseDemoViewModel()
         
         // First batch of data
         let firstBatch = [60.0, 70.0]
@@ -136,7 +136,7 @@ struct HeadlessSDKExampleTests {
     }
     
     @Test func testMetricsIgnoredWhenMonitoringDisabled() async throws {
-        let viewModel = HeadlessSDKViewModel()
+        let viewModel = FitPulseDemoViewModel()
         
         let testRates = [60.0, 70.0, 80.0]
         let mockMetrics = testRates.map { createMockPulseMetric(value: $0) }
@@ -153,7 +153,7 @@ struct HeadlessSDKExampleTests {
     }
     
     @Test func testEmptyMetricsBuffer() async throws {
-        let viewModel = HeadlessSDKViewModel()
+        let viewModel = FitPulseDemoViewModel()
         
         let mockBuffer = createMockMetricsBuffer(pulseMetrics: [])
         viewModel.simulateMetricsUpdate(buffer: mockBuffer, isMonitoringEnabled: true)
@@ -168,7 +168,7 @@ struct HeadlessSDKExampleTests {
     // MARK: - Edge Cases
     
     @Test func testExtremeValues() async throws {
-        let viewModel = HeadlessSDKViewModel()
+        let viewModel = FitPulseDemoViewModel()
         
         // Test with extreme but realistic heart rate values
         let extremeRates = [30.0, 200.0, 120.0] // Very low, very high, normal
@@ -183,7 +183,7 @@ struct HeadlessSDKExampleTests {
     }
     
     @Test func testStopMonitoringCalculatesCorrectFinalValues() async throws {
-        let viewModel = HeadlessSDKViewModel()
+        let viewModel = FitPulseDemoViewModel()
         
         // Simulate collecting some data
         let testRates = [65.0, 75.0, 85.0]
@@ -229,7 +229,7 @@ struct MockMetricsBuffer {
 
 // Create a viewModel model for testing
 @MainActor
-class HeadlessSDKViewModel: ObservableObject {
+class FitPulseDemoViewModel: ObservableObject {
     @Published var testCollectedRates: [Double] = []
     @Published var testMinPulseRate: Int = 0
     @Published var testMaxPulseRate: Int = 0

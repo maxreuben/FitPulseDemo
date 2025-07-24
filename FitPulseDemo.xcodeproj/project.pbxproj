@@ -18,48 +18,35 @@
 			remoteGlobalIDString = 1B0A010D2E29763E00EEE695;
 			remoteInfo = PresageSDKSample;
 		};
-		1B0A012C2E29763F00EEE695 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 1B0A01062E29763E00EEE695 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 1B0A010D2E29763E00EEE695;
-			remoteInfo = PresageSDKSample;
-		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		1B0A010E2E29763E00EEE695 /* PresageSDKSample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PresageSDKSample.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		1B0A01212E29763F00EEE695 /* PresageSDKSampleTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PresageSDKSampleTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		1B0A012B2E29763F00EEE695 /* PresageSDKSampleUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PresageSDKSampleUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		1B0A010E2E29763E00EEE695 /* FitPulseDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FitPulseDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		1B0A01212E29763F00EEE695 /* FitPulseDemoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FitPulseDemoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
-		1B27FC352E3085AB00A2F43C /* Exceptions for "PresageSDKSample" folder in "PresageSDKSample" target */ = {
+		1B27FC352E3085AB00A2F43C /* Exceptions for "FitPulseDemo" folder in "FitPulseDemo" target */ = {
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
 				Info.plist,
 			);
-			target = 1B0A010D2E29763E00EEE695 /* PresageSDKSample */;
+			target = 1B0A010D2E29763E00EEE695 /* FitPulseDemo */;
 		};
 /* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
-		1B0A01102E29763E00EEE695 /* PresageSDKSample */ = {
+		1B0A01102E29763E00EEE695 /* FitPulseDemo */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			exceptions = (
-				1B27FC352E3085AB00A2F43C /* Exceptions for "PresageSDKSample" folder in "PresageSDKSample" target */,
+				1B27FC352E3085AB00A2F43C /* Exceptions for "FitPulseDemo" folder in "FitPulseDemo" target */,
 			);
-			path = PresageSDKSample;
+			path = FitPulseDemo;
 			sourceTree = "<group>";
 		};
-		1B0A01242E29763F00EEE695 /* PresageSDKSampleTests */ = {
+		1B0A01242E29763F00EEE695 /* FitPulseDemoTests */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
-			path = PresageSDKSampleTests;
-			sourceTree = "<group>";
-		};
-		1B0A012E2E29763F00EEE695 /* PresageSDKSampleUITests */ = {
-			isa = PBXFileSystemSynchronizedRootGroup;
-			path = PresageSDKSampleUITests;
+			path = FitPulseDemoTests;
 			sourceTree = "<group>";
 		};
 /* End PBXFileSystemSynchronizedRootGroup section */
@@ -80,22 +67,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		1B0A01282E29763F00EEE695 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
 		1B0A01052E29763E00EEE695 = {
 			isa = PBXGroup;
 			children = (
-				1B0A01102E29763E00EEE695 /* PresageSDKSample */,
-				1B0A01242E29763F00EEE695 /* PresageSDKSampleTests */,
-				1B0A012E2E29763F00EEE695 /* PresageSDKSampleUITests */,
+				1B0A01102E29763E00EEE695 /* FitPulseDemo */,
+				1B0A01242E29763F00EEE695 /* FitPulseDemoTests */,
 				1B0A010F2E29763E00EEE695 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -103,9 +82,8 @@
 		1B0A010F2E29763E00EEE695 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				1B0A010E2E29763E00EEE695 /* PresageSDKSample.app */,
-				1B0A01212E29763F00EEE695 /* PresageSDKSampleTests.xctest */,
-				1B0A012B2E29763F00EEE695 /* PresageSDKSampleUITests.xctest */,
+				1B0A010E2E29763E00EEE695 /* FitPulseDemo.app */,
+				1B0A01212E29763F00EEE695 /* FitPulseDemoTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -113,9 +91,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		1B0A010D2E29763E00EEE695 /* PresageSDKSample */ = {
+		1B0A010D2E29763E00EEE695 /* FitPulseDemo */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 1B0A01352E29763F00EEE695 /* Build configuration list for PBXNativeTarget "PresageSDKSample" */;
+			buildConfigurationList = 1B0A01352E29763F00EEE695 /* Build configuration list for PBXNativeTarget "FitPulseDemo" */;
 			buildPhases = (
 				1B0A010A2E29763E00EEE695 /* Sources */,
 				1B0A010B2E29763E00EEE695 /* Frameworks */,
@@ -126,19 +104,19 @@
 			dependencies = (
 			);
 			fileSystemSynchronizedGroups = (
-				1B0A01102E29763E00EEE695 /* PresageSDKSample */,
+				1B0A01102E29763E00EEE695 /* FitPulseDemo */,
 			);
-			name = PresageSDKSample;
+			name = FitPulseDemo;
 			packageProductDependencies = (
 				1B0A013F2E29774000EEE695 /* SmartSpectraSwiftSDK */,
 			);
 			productName = PresageSDKSample;
-			productReference = 1B0A010E2E29763E00EEE695 /* PresageSDKSample.app */;
+			productReference = 1B0A010E2E29763E00EEE695 /* FitPulseDemo.app */;
 			productType = "com.apple.product-type.application";
 		};
-		1B0A01202E29763F00EEE695 /* PresageSDKSampleTests */ = {
+		1B0A01202E29763F00EEE695 /* FitPulseDemoTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 1B0A01382E29763F00EEE695 /* Build configuration list for PBXNativeTarget "PresageSDKSampleTests" */;
+			buildConfigurationList = 1B0A01382E29763F00EEE695 /* Build configuration list for PBXNativeTarget "FitPulseDemoTests" */;
 			buildPhases = (
 				1B0A011D2E29763F00EEE695 /* Sources */,
 				1B0A011E2E29763F00EEE695 /* Frameworks */,
@@ -150,37 +128,14 @@
 				1B0A01232E29763F00EEE695 /* PBXTargetDependency */,
 			);
 			fileSystemSynchronizedGroups = (
-				1B0A01242E29763F00EEE695 /* PresageSDKSampleTests */,
+				1B0A01242E29763F00EEE695 /* FitPulseDemoTests */,
 			);
-			name = PresageSDKSampleTests;
+			name = FitPulseDemoTests;
 			packageProductDependencies = (
 			);
 			productName = PresageSDKSampleTests;
-			productReference = 1B0A01212E29763F00EEE695 /* PresageSDKSampleTests.xctest */;
+			productReference = 1B0A01212E29763F00EEE695 /* FitPulseDemoTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
-		};
-		1B0A012A2E29763F00EEE695 /* PresageSDKSampleUITests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 1B0A013B2E29763F00EEE695 /* Build configuration list for PBXNativeTarget "PresageSDKSampleUITests" */;
-			buildPhases = (
-				1B0A01272E29763F00EEE695 /* Sources */,
-				1B0A01282E29763F00EEE695 /* Frameworks */,
-				1B0A01292E29763F00EEE695 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				1B0A012D2E29763F00EEE695 /* PBXTargetDependency */,
-			);
-			fileSystemSynchronizedGroups = (
-				1B0A012E2E29763F00EEE695 /* PresageSDKSampleUITests */,
-			);
-			name = PresageSDKSampleUITests;
-			packageProductDependencies = (
-			);
-			productName = PresageSDKSampleUITests;
-			productReference = 1B0A012B2E29763F00EEE695 /* PresageSDKSampleUITests.xctest */;
-			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 /* End PBXNativeTarget section */
 
@@ -199,13 +154,9 @@
 						CreatedOnToolsVersion = 16.4;
 						TestTargetID = 1B0A010D2E29763E00EEE695;
 					};
-					1B0A012A2E29763F00EEE695 = {
-						CreatedOnToolsVersion = 16.4;
-						TestTargetID = 1B0A010D2E29763E00EEE695;
-					};
 				};
 			};
-			buildConfigurationList = 1B0A01092E29763E00EEE695 /* Build configuration list for PBXProject "PresageSDKSample" */;
+			buildConfigurationList = 1B0A01092E29763E00EEE695 /* Build configuration list for PBXProject "FitPulseDemo" */;
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
@@ -222,9 +173,8 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				1B0A010D2E29763E00EEE695 /* PresageSDKSample */,
-				1B0A01202E29763F00EEE695 /* PresageSDKSampleTests */,
-				1B0A012A2E29763F00EEE695 /* PresageSDKSampleUITests */,
+				1B0A010D2E29763E00EEE695 /* FitPulseDemo */,
+				1B0A01202E29763F00EEE695 /* FitPulseDemoTests */,
 			);
 		};
 /* End PBXProject section */
@@ -238,13 +188,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		1B0A011F2E29763F00EEE695 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		1B0A01292E29763F00EEE695 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -268,32 +211,20 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		1B0A01272E29763F00EEE695 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
 		1B0A01232E29763F00EEE695 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 1B0A010D2E29763E00EEE695 /* PresageSDKSample */;
+			target = 1B0A010D2E29763E00EEE695 /* FitPulseDemo */;
 			targetProxy = 1B0A01222E29763F00EEE695 /* PBXContainerItemProxy */;
-		};
-		1B0A012D2E29763F00EEE695 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 1B0A010D2E29763E00EEE695 /* PresageSDKSample */;
-			targetProxy = 1B0A012C2E29763F00EEE695 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		1B0A01332E29763F00EEE695 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReferenceAnchor = 1B0A01102E29763E00EEE695 /* PresageSDKSample */;
+			baseConfigurationReferenceAnchor = 1B0A01102E29763E00EEE695 /* FitPulseDemo */;
 			baseConfigurationReferenceRelativePath = Config.xcconfig;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -345,7 +276,8 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				INFOPLIST_PREFIX_HEADER = PresageSDKSample/Config.xcconfig;
+				INFOPLIST_FILE = FitPulseDemo/Info.plist;
+				INFOPLIST_PREFIX_HEADER = FitPulseDemo/Config.xcconfig;
 				INFOPLIST_PREPROCESS = NO;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
@@ -358,7 +290,7 @@
 		};
 		1B0A01342E29763F00EEE695 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReferenceAnchor = 1B0A01102E29763E00EEE695 /* PresageSDKSample */;
+			baseConfigurationReferenceAnchor = 1B0A01102E29763E00EEE695 /* FitPulseDemo */;
 			baseConfigurationReferenceRelativePath = Config.xcconfig;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -404,7 +336,8 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				INFOPLIST_PREFIX_HEADER = PresageSDKSample/Config.xcconfig;
+				INFOPLIST_FILE = FitPulseDemo/Info.plist;
+				INFOPLIST_PREFIX_HEADER = FitPulseDemo/Config.xcconfig;
 				INFOPLIST_PREPROCESS = NO;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = NO;
@@ -415,20 +348,20 @@
 		};
 		1B0A01362E29763F00EEE695 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReferenceAnchor = 1B0A01102E29763E00EEE695 /* PresageSDKSample */;
+			baseConfigurationReferenceAnchor = 1B0A01102E29763E00EEE695 /* FitPulseDemo */;
 			baseConfigurationReferenceRelativePath = Config.xcconfig;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_ENTITLEMENTS = PresageSDKSample/PresageSDKSample.entitlements;
+				CODE_SIGN_ENTITLEMENTS = FitPulseDemo/FitPulseDemo.entitlements;
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = F25SW64KYM;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = NO;
-				INFOPLIST_FILE = PresageSDKSample/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = PresageSDKSample;
+				INFOPLIST_FILE = FitPulseDemo/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = FitPulseDemo;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
@@ -439,12 +372,13 @@
 				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_PREFIX_HEADER = FitPulseDemo/Config.xcconfig;
 				IPHONEOS_DEPLOYMENT_TARGET = 16;
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 15.5;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = Reuben.PresageSDKSample;
+				PRODUCT_BUNDLE_IDENTIFIER = Reuben.FitPulseDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				REGISTER_APP_GROUPS = YES;
 				SDKROOT = auto;
@@ -458,20 +392,20 @@
 		};
 		1B0A01372E29763F00EEE695 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReferenceAnchor = 1B0A01102E29763E00EEE695 /* PresageSDKSample */;
+			baseConfigurationReferenceAnchor = 1B0A01102E29763E00EEE695 /* FitPulseDemo */;
 			baseConfigurationReferenceRelativePath = Config.xcconfig;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_ENTITLEMENTS = PresageSDKSample/PresageSDKSample.entitlements;
+				CODE_SIGN_ENTITLEMENTS = FitPulseDemo/FitPulseDemo.entitlements;
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = F25SW64KYM;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = NO;
-				INFOPLIST_FILE = PresageSDKSample/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = PresageSDKSample;
+				INFOPLIST_FILE = FitPulseDemo/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = FitPulseDemo;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
@@ -482,12 +416,13 @@
 				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_PREFIX_HEADER = FitPulseDemo/Config.xcconfig;
 				IPHONEOS_DEPLOYMENT_TARGET = 16;
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 15.5;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = Reuben.PresageSDKSample;
+				PRODUCT_BUNDLE_IDENTIFIER = Reuben.FitPulseDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				REGISTER_APP_GROUPS = YES;
 				SDKROOT = auto;
@@ -501,100 +436,54 @@
 		};
 		1B0A01392E29763F00EEE695 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReferenceAnchor = 1B0A01102E29763E00EEE695 /* PresageSDKSample */;
+			baseConfigurationReferenceAnchor = 1B0A01102E29763E00EEE695 /* FitPulseDemo */;
 			baseConfigurationReferenceRelativePath = Config.xcconfig;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = F25SW64KYM;
-				GENERATE_INFOPLIST_FILE = YES;
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = FitPulseDemo/Info.plist;
+				INFOPLIST_PREFIX_HEADER = FitPulseDemo/Config.xcconfig;
 				IPHONEOS_DEPLOYMENT_TARGET = 18.5;
 				MACOSX_DEPLOYMENT_TARGET = 15.5;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = Reuben.PresageSDKSampleTests;
+				PRODUCT_BUNDLE_IDENTIFIER = Reuben.FitPulseDemoTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = auto;
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx xros xrsimulator";
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2,7";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/PresageSDKSample.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/PresageSDKSample";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/FitPulseDemo.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/FitPulseDemo";
 				XROS_DEPLOYMENT_TARGET = 2.5;
 			};
 			name = Debug;
 		};
 		1B0A013A2E29763F00EEE695 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReferenceAnchor = 1B0A01102E29763E00EEE695 /* PresageSDKSample */;
+			baseConfigurationReferenceAnchor = 1B0A01102E29763E00EEE695 /* FitPulseDemo */;
 			baseConfigurationReferenceRelativePath = Config.xcconfig;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = F25SW64KYM;
-				GENERATE_INFOPLIST_FILE = YES;
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = FitPulseDemo/Info.plist;
+				INFOPLIST_PREFIX_HEADER = FitPulseDemo/Config.xcconfig;
 				IPHONEOS_DEPLOYMENT_TARGET = 18.5;
 				MACOSX_DEPLOYMENT_TARGET = 15.5;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = Reuben.PresageSDKSampleTests;
+				PRODUCT_BUNDLE_IDENTIFIER = Reuben.FitPulseDemoTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = auto;
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx xros xrsimulator";
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2,7";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/PresageSDKSample.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/PresageSDKSample";
-				XROS_DEPLOYMENT_TARGET = 2.5;
-			};
-			name = Release;
-		};
-		1B0A013C2E29763F00EEE695 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReferenceAnchor = 1B0A01102E29763E00EEE695 /* PresageSDKSample */;
-			baseConfigurationReferenceRelativePath = Config.xcconfig;
-			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = F25SW64KYM;
-				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 18.5;
-				MACOSX_DEPLOYMENT_TARGET = 15.5;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = Reuben.PresageSDKSampleUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = auto;
-				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx xros xrsimulator";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2,7";
-				TEST_TARGET_NAME = PresageSDKSample;
-				XROS_DEPLOYMENT_TARGET = 2.5;
-			};
-			name = Debug;
-		};
-		1B0A013D2E29763F00EEE695 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReferenceAnchor = 1B0A01102E29763E00EEE695 /* PresageSDKSample */;
-			baseConfigurationReferenceRelativePath = Config.xcconfig;
-			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = F25SW64KYM;
-				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 18.5;
-				MACOSX_DEPLOYMENT_TARGET = 15.5;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = Reuben.PresageSDKSampleUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = auto;
-				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx xros xrsimulator";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2,7";
-				TEST_TARGET_NAME = PresageSDKSample;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/FitPulseDemo.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/FitPulseDemo";
 				XROS_DEPLOYMENT_TARGET = 2.5;
 			};
 			name = Release;
@@ -602,7 +491,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		1B0A01092E29763E00EEE695 /* Build configuration list for PBXProject "PresageSDKSample" */ = {
+		1B0A01092E29763E00EEE695 /* Build configuration list for PBXProject "FitPulseDemo" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				1B0A01332E29763F00EEE695 /* Debug */,
@@ -611,7 +500,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		1B0A01352E29763F00EEE695 /* Build configuration list for PBXNativeTarget "PresageSDKSample" */ = {
+		1B0A01352E29763F00EEE695 /* Build configuration list for PBXNativeTarget "FitPulseDemo" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				1B0A01362E29763F00EEE695 /* Debug */,
@@ -620,20 +509,11 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		1B0A01382E29763F00EEE695 /* Build configuration list for PBXNativeTarget "PresageSDKSampleTests" */ = {
+		1B0A01382E29763F00EEE695 /* Build configuration list for PBXNativeTarget "FitPulseDemoTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				1B0A01392E29763F00EEE695 /* Debug */,
 				1B0A013A2E29763F00EEE695 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		1B0A013B2E29763F00EEE695 /* Build configuration list for PBXNativeTarget "PresageSDKSampleUITests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				1B0A013C2E29763F00EEE695 /* Debug */,
-				1B0A013D2E29763F00EEE695 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

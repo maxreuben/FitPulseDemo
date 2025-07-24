@@ -1,6 +1,6 @@
 //
-//  HeadlessSDKExample.swift
-//  PresageSDKSample
+//  FitPulseDemo.swift
+//  FitPulseDemo
 //
 //  Created by Reuben Varghese on 7/17/25.
 //
@@ -9,7 +9,7 @@ import SwiftUI
 import SmartSpectraSwiftSDK
 import AVFoundation
 
-struct HeadlessSDKExample: View {
+struct FitPulseDemo: View {
     @ObservedObject var sdk = SmartSpectraSwiftSDK.shared
     @ObservedObject var vitalsProcessor = SmartSpectraVitalsProcessor.shared
     @State private var isVitalMonitoringEnabled: Bool = false
