@@ -7,25 +7,24 @@
 
 import SwiftUI
 import SmartSpectraSwiftSDK
+import AVFoundation
+import UIKit
 
 struct HeadlessSDKExample: View {
     @ObservedObject var sdk = SmartSpectraSwiftSDK.shared
     @ObservedObject var vitalsProcessor = SmartSpectraVitalsProcessor.shared
-    @State private var hasSavedStats: Bool = UserDefaults.standard.bool(forKey: "hasStats")
     @State private var isVitalMonitoringEnabled: Bool = false
     @State var smartSpectraMode: SmartSpectraMode = .continuous
-    @State private var minPulseRate: Int = {
-        let defaults = UserDefaults.standard
-        return defaults.bool(forKey: "hasStats") ? defaults.integer(forKey: "minPulseRate") : 0
-    }()
-    @State private var maxPulseRate: Int = {
-        let defaults = UserDefaults.standard
-        return defaults.bool(forKey: "hasStats") ? defaults.integer(forKey: "maxPulseRate") : 0
-    }()
-    @State private var averagePulseRate: Int = {
-        let defaults = UserDefaults.standard
-        return defaults.bool(forKey: "hasStats") ? defaults.integer(forKey: "averagePulseRate") : 0
-    }()
+    @State private var minPulseRate: Int = 0
+    @State private var maxPulseRate: Int = 0
+    @State private var averagePulseRate: Int = 0
+    @State private var collectedRates: [Double] = []
+    @State private var permissionDenied: Bool = false
+    @State private var showPermissionAlert: Bool = false
+    
+    private var statusText: String {
+        permissionDenied ? "Permissions denied" : vitalsProcessor.statusHint
+    }
     
     @Environment(\.colorScheme) private var environmentColorScheme
     @State private var overrideColorScheme: ColorScheme? = nil
@@ -60,19 +59,27 @@ struct HeadlessSDKExample: View {
                     ContinuousVitalsPlotView()
                     Grid {
                         GridRow {
-                            Text("Status: \(vitalsProcessor.statusHint)")
+                                Text("Status: \(statusText)")
+                                    .foregroundColor(permissionDenied ? Color.red : Color.primary)
                         }
                         
                         GridRow {
                             HStack {
                                 Text("Vitals Monitoring")
+                                Circle()
+                                    .fill(isVitalMonitoringEnabled ? Color.green : Color.red)
+                                    .frame(width: 10, height: 10)
                                 Spacer()
                                 Button(isVitalMonitoringEnabled ? "Stop": "Start") {
-                                    isVitalMonitoringEnabled.toggle()
-                                    if(isVitalMonitoringEnabled) {
-                                        startVitalsMonitoring()
+                                    if permissionDenied {
+                                        showPermissionAlert = true
                                     } else {
-                                        stopVitalsMonitoring()
+                                        isVitalMonitoringEnabled.toggle()
+                                        if isVitalMonitoringEnabled {
+                                            startVitalsMonitoring()
+                                        } else {
+                                            stopVitalsMonitoring()
+                                        }
                                     }
                                 }
                             }
@@ -107,25 +114,57 @@ struct HeadlessSDKExample: View {
                 }
             }
         }
+        .onAppear {
+            let status = AVCaptureDevice.authorizationStatus(for: .video)
+            switch status {
+            case .notDetermined:
+                AVCaptureDevice.requestAccess(for: .video) { granted in
+                    DispatchQueue.main.async {
+                        permissionDenied = !granted
+                    }
+                }
+            case .denied, .restricted:
+                permissionDenied = true
+            case .authorized:
+                permissionDenied = false
+            @unknown default:
+                permissionDenied = true
+            }
+        }
         .onReceive(sdk.$metricsBuffer) { metricsBuffer in
             guard isVitalMonitoringEnabled else { return }
             guard let buffer = metricsBuffer, buffer.isInitialized else { return }
-            let rates = buffer.pulse.rate.map { Double($0.value) }
-            guard !rates.isEmpty else { return }
-            let minValue = rates.min() ?? 0
-            let maxValue = rates.max() ?? 0
-            let sum = rates.reduce(0, +)
-            let avgValue = sum / Double(rates.count)
+            let newRates = buffer.pulse.rate.map { Double($0.value) }
+            guard !newRates.isEmpty else { return }
+
+            collectedRates.append(contentsOf: newRates)
+
+            let minValue = collectedRates.min()!
+            let maxValue = collectedRates.max()!
+            let sum = collectedRates.reduce(0, +)
+            let avgValue = sum / Double(collectedRates.count)
+
             minPulseRate = Int(minValue.rounded())
             maxPulseRate = Int(maxValue.rounded())
             averagePulseRate = Int(avgValue.rounded())
         }
     .id(overrideColorScheme ?? environmentColorScheme)
     .preferredColorScheme(overrideColorScheme)
+    .alert("Camera Permission Required", isPresented: $showPermissionAlert) {
+        Button("Open Settings") {
+            if let url = URL(string: UIApplication.openSettingsURLString),
+               UIApplication.shared.canOpenURL(url) {
+                UIApplication.shared.open(url)
+            }
+        }
+        Button("Cancel", role: .cancel) { }
+    } message: {
+        Text("Please allow camera access in Settings to use vitals monitoring.")
+    }
     }
 
     func startVitalsMonitoring() {
-        // Reset stored stats when starting monitoring
+        collectedRates = []
         minPulseRate = 0
         maxPulseRate = 0
         averagePulseRate = 0
@@ -136,10 +175,15 @@ struct HeadlessSDKExample: View {
     func stopVitalsMonitoring() {
         vitalsProcessor.stopProcessing()
         vitalsProcessor.stopRecording()
-        let defaults = UserDefaults.standard
-        defaults.set(minPulseRate, forKey: "minPulseRate")
-        defaults.set(maxPulseRate, forKey: "maxPulseRate")
-        defaults.set(averagePulseRate, forKey: "averagePulseRate")
-        defaults.set(true, forKey: "hasStats")
+
+        if !collectedRates.isEmpty {
+            let minValue = collectedRates.min()!
+            let maxValue = collectedRates.max()!
+            let sum = collectedRates.reduce(0, +)
+            let avgValue = sum / Double(collectedRates.count)
+            minPulseRate = Int(minValue.rounded())
+            maxPulseRate = Int(maxValue.rounded())
+            averagePulseRate = Int(avgValue.rounded())
+        }
     }
 }
