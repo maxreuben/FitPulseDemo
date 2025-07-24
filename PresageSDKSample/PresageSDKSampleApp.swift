@@ -14,7 +14,6 @@ struct PresageSDKSampleApp: App {
     var body: some Scene {
         WindowGroup {
             HeadlessSDKExample()
-//                .environment(\.managedObjectContext, persistenceController.container.viewContext)
         }
     }
 }

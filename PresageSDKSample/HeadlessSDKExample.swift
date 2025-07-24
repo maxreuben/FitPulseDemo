@@ -8,7 +8,6 @@
 import SwiftUI
 import SmartSpectraSwiftSDK
 import AVFoundation
-import UIKit
 
 struct HeadlessSDKExample: View {
     @ObservedObject var sdk = SmartSpectraSwiftSDK.shared
@@ -33,7 +32,9 @@ struct HeadlessSDKExample: View {
         // (Required) Authentication. Only need to use one of the two options: API Key or Oauth below
         // Authentication with Oauth currently only supported for apps in testflight/appstore
         // Option 1: (authentication with api key) set apiKey. API key from https://physiology.presagetech.com. Leave default or remove if you want to use oauth. Oauth overrides api key
-        let apiKey = "PMy4i6XfMzafy6EbD8Wfm9ols9ZdF47j9RvOi8g1"
+        guard let apiKey = Bundle.main.object(forInfoDictionaryKey: "API_KEY") as? String else {
+            fatalError("Missing API_KEY")
+        }
         sdk.setApiKey(apiKey)
         
         // Option 2: (Oauth) If you want to use Oauth, copy the Oauth config from PresageTech's developer portal (<https://physiology.presagetech.com/>) to your app's root.
