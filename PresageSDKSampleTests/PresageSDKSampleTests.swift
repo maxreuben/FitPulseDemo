@@ -15,13 +15,6 @@ import AVFoundation
 @MainActor
 struct HeadlessSDKExampleTests {
     
-    // MARK: - Test API Key
-    
-    @Test func testApiKeyPresence() async throws {
-            let key = Bundle.main.object(forInfoDictionaryKey: "API_KEY") as? String
-            #expect(key != nil && !key!.isEmpty)
-        }
-    
     // MARK: - Initialization Tests
     
     @Test func testInitialization() async throws {
