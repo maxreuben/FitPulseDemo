@@ -13,7 +13,9 @@ struct HeadlessSDKExample: View {
     @ObservedObject var vitalsProcessor = SmartSpectraVitalsProcessor.shared
     @State private var isVitalMonitoringEnabled: Bool = false
     @State var smartSpectraMode: SmartSpectraMode = .continuous
-
+    @State private var minPulseRate: Int = 0
+    @State private var maxPulseRate: Int = 0
+    @State private var averagePulseRate: Int = 0
     
     init() {
         // (Required) Authentication. Only need to use one of the two options: API Key or Oauth below
@@ -52,6 +54,24 @@ struct HeadlessSDKExample: View {
                 }
                 .padding(.horizontal, 10)
             }
+            Text("Min Pulse Rate: \(minPulseRate) bpm")
+                .padding(.horizontal, 10)
+            Text("Max Pulse Rate: \(maxPulseRate) bpm")
+                .padding(.horizontal, 10)
+            Text("Avg Pulse Rate: \(averagePulseRate) bpm")
+                .padding(.horizontal, 10)
+        }
+        .onReceive(sdk.$metricsBuffer) { metricsBuffer in
+            guard let buffer = metricsBuffer, buffer.isInitialized else { return }
+            let rates = buffer.pulse.rate.map { Double($0.value) }
+            guard !rates.isEmpty else { return }
+            let minValue = rates.min()!
+            let maxValue = rates.max()!
+            let sum = rates.reduce(0, +)
+            let avgValue = sum / Double(rates.count)
+            minPulseRate = Int(minValue.rounded())
+            maxPulseRate = Int(maxValue.rounded())
+            averagePulseRate = Int(avgValue.rounded())
         }
     }
 
