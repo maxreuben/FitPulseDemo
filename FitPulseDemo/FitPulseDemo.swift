@@ -20,7 +20,10 @@ struct FitPulseDemo: View {
     @State private var collectedRates: [Double] = []
     @State private var permissionDenied: Bool = false
     @State private var showPermissionAlert: Bool = false
-    
+    @State private var runningSum: Double = 0
+    @State private var currentMin: Double = Double.infinity
+    @State private var currentMax: Double = -Double.infinity
+
     private var statusText: String {
         permissionDenied ? "Permissions denied" : vitalsProcessor.statusHint
     }
@@ -137,16 +140,18 @@ struct FitPulseDemo: View {
             guard let buffer = metricsBuffer, buffer.isInitialized else { return }
             let newRates = buffer.pulse.rate.map { Double($0.value) }
             guard !newRates.isEmpty else { return }
-
-            collectedRates.append(contentsOf: newRates)
-
-            let minValue = collectedRates.min()!
-            let maxValue = collectedRates.max()!
-            let sum = collectedRates.reduce(0, +)
-            let avgValue = sum / Double(collectedRates.count)
-
-            minPulseRate = Int(minValue.rounded())
-            maxPulseRate = Int(maxValue.rounded())
+            
+            for rate in newRates {
+                collectedRates.append(rate)
+                runningSum += rate
+                currentMin = min(currentMin, rate)
+                currentMax = max(currentMax, rate)
+            }
+            
+            let avgValue = runningSum / Double(collectedRates.count)
+            
+            minPulseRate = Int(currentMin.rounded())
+            maxPulseRate = Int(currentMax.rounded())
             averagePulseRate = Int(avgValue.rounded())
         }
     .id(overrideColorScheme ?? environmentColorScheme)
@@ -169,6 +174,9 @@ struct FitPulseDemo: View {
         minPulseRate = 0
         maxPulseRate = 0
         averagePulseRate = 0
+        runningSum = 0
+        currentMin = Double.infinity
+        currentMax = -Double.infinity
         vitalsProcessor.startProcessing()
         vitalsProcessor.startRecording()
     }
