@@ -13,7 +13,10 @@ Note that this is for testing & development purposes only. For deployment, use a
 3. After including the API Key your Info.plist, it should look something like this:<img width="683" height="364" alt="image" src="https://github.com/user-attachments/assets/b0f9ab27-ae1b-4c4e-b187-39cca6114668" />
 4. Make sure the Info.plist and Config.xcconfig file are added to the Target's Build Settings under Packaging like such:<img width="627" height="159" alt="image" src="https://github.com/user-attachments/assets/1cac5cf7-3cb7-4e6e-985b-8d0e7cb8cbc0" />
 
-5. Add the SmartSpectraSDKSwift by right-clicking the project in Xcode sidebar and clicking on Add Package Dependencies... or by going to File -> "Add Package Dependencies...". In the "Search or Enter Package URL" field, enter the URL: "https://github.com/Presage-Security/SmartSpectra". For the "Dependency Rule," select "Branch" and then "main.". For "Add to Target," select your project.
+5. Add the SmartSpectraSDKSwift by right-clicking the project in Xcode sidebar and clicking on Add Package Dependencies... or by going to File -> "Add Package Dependencies...". In the "Search or Enter Package URL" field, enter the URL: "https://github.com/Presage-Security/SmartSpectra". For the "Dependency Rule," select "Branch" and then "main.". For "Add to Target," select your project. Two packages will show up under Package Dependencies in sidebar as shown below and one under the Package dependencies in Project file as shown below.
+<img width="271" height="338" alt="image" src="https://github.com/user-attachments/assets/338e1c60-79e0-42d2-823f-20c0f2e2f785" />
+<img width="1240" height="247" alt="image" src="https://github.com/user-attachments/assets/68e337d1-276d-4b8e-8f1a-b44bde2680bd" />
+
 6. Setup the signing and capabilities for the demo app target in Xcode. Make sure to select your development team and set a unique bundle identifier.
 7. Connect your iOS device to your computer.
 8. Select your device as the target in Xcode.
