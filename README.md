@@ -5,7 +5,7 @@
 Increasing sampling interval to 2 Hz will drastically reduce the CPU load.
  <br />
  ### To Build and Use this Demo:
-  1. Download the code as zip and unzip folder, or directly clone by executing `git clone https://github.com/maxreuben/FitPulseDemo.git` or by selecting open with Xcode in the dropdown in the top right under Code ▼ in the top right.
+  1. Download the code as zip and unzip folder, or directly clone by executing `git clone https://github.com/maxreuben/FitPulseDemo.git` or by selecting Open with Xcode in the dropdown in the top right under Code ▼ in the top right.
   3. Follow instructions [here](QuickStart.md).
  ### [FAQ](FAQ.md)
  
